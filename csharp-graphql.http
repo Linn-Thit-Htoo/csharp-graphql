@@ -1,0 +1,6 @@
+@csharp_graphql_HostAddress = http://localhost:5085
+
+GET {{csharp_graphql_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
