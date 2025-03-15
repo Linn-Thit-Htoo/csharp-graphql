@@ -1,6 +1,4 @@
 using csharp_graphql.Dependencies;
-using csharp_graphql.GraphQL;
-using csharp_graphql.Repositories;
 
 namespace csharp_graphql;
 
