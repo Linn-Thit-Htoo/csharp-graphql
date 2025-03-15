@@ -1,3 +1,4 @@
+using csharp_graphql.Dependencies;
 using csharp_graphql.GraphQL;
 using csharp_graphql.Repositories;
 
@@ -18,13 +19,7 @@ public class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
-        builder.Services.AddSingleton<IBlogRepository, BlogRepository>();
-        builder
-            .Services.AddGraphQLServer()
-            .AddQueryType<BlogQuery>()
-            .AddMutationType<BlogMutation>()
-            .AddSubscriptionType<BlogSubscription>()
-            .AddInMemorySubscriptions();
+        builder.Services.AddDependencies(builder);
 
         var app = builder.Build();
         app.MapGraphQL("/");
