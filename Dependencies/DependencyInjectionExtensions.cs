@@ -5,7 +5,10 @@ namespace csharp_graphql.Dependencies;
 
 public static class DependencyInjectionExtensions
 {
-    public static IServiceCollection AddDependencies(this IServiceCollection services, WebApplicationBuilder builder)
+    public static IServiceCollection AddDependencies(
+        this IServiceCollection services,
+        WebApplicationBuilder builder
+    )
     {
         builder.Services.AddSingleton<IBlogRepository, BlogRepository>();
         builder
