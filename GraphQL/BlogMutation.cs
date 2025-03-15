@@ -30,7 +30,6 @@ public class BlogMutation
     )
     {
         blogRepository.AddBlog(blog);
-
         await eventSender.SendAsync("BlogAdded", blog);
 
         return blog;
