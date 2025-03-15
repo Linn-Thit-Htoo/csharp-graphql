@@ -15,7 +15,6 @@ public class Program
             {
                 opt.JsonSerializerOptions.PropertyNamingPolicy = null;
             });
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
@@ -30,7 +29,6 @@ public class Program
         var app = builder.Build();
         app.MapGraphQL("/");
 
-        // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
