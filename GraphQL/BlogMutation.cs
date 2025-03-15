@@ -23,9 +23,11 @@ public class BlogMutation
       }
     }
      */
-    public async Task<BlogModel> AddBlog([Service] IBlogRepository blogRepository,
+    public async Task<BlogModel> AddBlog(
+        [Service] IBlogRepository blogRepository,
         [Service] ITopicEventSender eventSender,
-        BlogModel blog)
+        BlogModel blog
+    )
     {
         blogRepository.AddBlog(blog);
 
