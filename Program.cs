@@ -11,16 +11,19 @@ public class Program
 
         // Add services to the container.
 
-        builder.Services.AddControllers().AddJsonOptions(opt =>
-        {
-            opt.JsonSerializerOptions.PropertyNamingPolicy = null;
-        });
+        builder
+            .Services.AddControllers()
+            .AddJsonOptions(opt =>
+            {
+                opt.JsonSerializerOptions.PropertyNamingPolicy = null;
+            });
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
         builder.Services.AddSingleton<IBlogRepository, BlogRepository>();
-        builder.Services.AddGraphQLServer()
+        builder
+            .Services.AddGraphQLServer()
             .AddQueryType<BlogQuery>()
             .AddMutationType<BlogMutation>()
             .AddSubscriptionType<BlogSubscription>()
@@ -39,7 +42,6 @@ public class Program
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
-
 
         app.MapControllers();
 
